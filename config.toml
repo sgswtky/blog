@@ -2,6 +2,6 @@ baseURL = "http://sgswtky.github.io/"
 languageCode = "ja-jp"
 title = "sgswtky blog"
 publishDir = "public"
-#theme = "hugo-natrium-theme"
+theme = "hugo-natrium-theme"
 hasCJKLanguage = true
 pygmentsStyle = "native"
