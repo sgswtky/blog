@@ -1,4 +1,4 @@
-baseURL = "http://sgswtky.githu.io/"
+baseURL = "http://sgswtky.github.io/"
 languageCode = "ja-jp"
 title = "sgswtky blog"
 publishDir = "public"
