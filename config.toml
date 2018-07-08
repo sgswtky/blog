@@ -1,0 +1,6 @@
+baseURL = "http://sgswtky.githu.io/"
+languageCode = "ja-jp"
+title = "sgswtky blog"
+publishDir = "public"
+theme = "hugo-bootstrap-premium"
+hasCJKLanguage = true
