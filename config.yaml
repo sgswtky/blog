@@ -1,0 +1,21 @@
+baseURL: https://sgswtky.github.io/
+footnoteReturnLinkContents: ↩
+title: 壁は登るためにある
+languageCode: ja-jp
+publishDir: public
+theme: hugo-lithium-theme
+hasCJKLanguage: true
+pygmentsCodefences: true
+pygmentsStyle: native
+
+menu:
+  main:
+    - name: Blog
+      url: /
+    - name: About
+      url: /about/
+    - name: GitHub
+      url: https://github.com/sgswtky
+    - name: Twitter
+      url: https://twitter.com/sgswtky
+
