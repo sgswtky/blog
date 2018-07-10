@@ -2,6 +2,8 @@
 title: "ローカルMacのターミナルを個人的に良い感じにした"
 date: 2018-07-09T17:08:18+09:00
 draft: false
+categories: ["local"]
+tags: ["iTerm2", "Terminal", "git"]
 ---
 
 ## きっかけ
