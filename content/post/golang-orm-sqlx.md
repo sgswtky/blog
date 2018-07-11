@@ -53,7 +53,7 @@ Goはどちらかというと小さいライブラリを組み合わせて使う
 
 ## 実際触ってみて
 
-※MySQL基準、CRUD程度しか触ってないです。
+簡単にCRUD、NamedExecというsqlxが作ったメソッド、トランザクションを一通り試してみた。
 
 ### select
 
@@ -94,15 +94,15 @@ r, err := db.Query("update users set user_name = 'update' where user_id = ?", 1)
 
 戻り値には Rowsとerorrが入る
 
-### NamedExecメソッドが良かった
+### NamedExecメソッド
 
 実際に触っていると `NamedExec` というメソッドを見つけた。
 
 このメソッドが便利そうで、 `map[string]interface{}` で渡して良い感じにクエリが組み立てられそうだと感じた。
 
-自分のチームでは、いちいちただの `insert` とか `update` 書くのってめんどくさいよね、ということで `reflect` パッケージとか使って構造体渡すだけで更新してくれるメソッドを作ったりする。
+いちいちただの `insert` とか `update` を書くのが面倒くさいから構造体渡したら作成・更新やってほしいと思っていて、実際にプロダクションのコードに `reflect` を使って構造体渡すだけで作成・更新してくれるメソッドを作っていたりする。
 
-（これは多分ActiveRecordと同じだと思うのですが、チームでメンテしてくのとよく中身がわからないけど使う、との違いで受け入れられてるんだと思う）
+（これは多分ActiveRecordと同じだと思うのですが、チームでメンテできるし…ということでそんな感じになってます）
 
 
 ```example.go
@@ -119,7 +119,9 @@ _, err = db.NamedExec(`
 
 `NamedExec` はそういう面倒くささを払拭するのに結構使えそうだと思った。
 
-例えば以下のコードで構造体のカラム名と中身のmap（`map[string]interface{}`）が取れる
+例えば以下のコードで構造体のカラム名と中身のmap（`map[string]interface{}`）が取れる。
+
+これと `NamedExec` を組み合わせる事で構造体を渡すことで作成・更新してくれるメソッドが作れそうだと思った。
 
 ```example.go
 func namedExecMap(inf interface{}) (entityMap map[string]interface{}) {
@@ -134,6 +136,8 @@ func namedExecMap(inf interface{}) (entityMap map[string]interface{}) {
 ```
 
 ### トランザクション
+
+トランザクションも一応試してみた。
 
 ```example.go
 tx, err := db.Beginx()
