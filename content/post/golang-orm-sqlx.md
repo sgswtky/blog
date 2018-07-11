@@ -192,9 +192,12 @@ func (DBTime DBTime) Value() (driver.Value, error) {
 
 ## まとめ
 
+詳しい使い方については `jmoiron` さんのgithub Pagesに詳細に書いてあった。
+
+http://jmoiron.github.io/sqlx/
+
 極々薄い感じのORMでとても良い感じだった。
 
 database/sql をほんの少し拡張しただけ、みたいな感じで責任範囲が明確。他の責任範囲が明確なライブラリと組み合わせる事で更に便利に使えそう。
 
 ORMリプレースが本格的に動き出したら、もっと踏み込んで触ってみたい。
-
