@@ -19,3 +19,11 @@ menu:
     - name: Twitter
       url: https://twitter.com/sgswtky
 
+params:
+  description: "sgswtkyのブログ"
+  logo:
+    url: logo.png
+    width: 50
+    height: 50
+    alt: logo
+  addThis: ra-5b4b66137935d0b4

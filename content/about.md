@@ -18,3 +18,11 @@ draft: false
 
 - ボルダリング
     - （ブログタイトルはボルダリングから適当に考えました）
+
+## credit
+
+Minecraft content and materials are trademarks and copyrights of Mojang and its licensors. All rights reserved.
+
+## contact
+
+to Twitter.
