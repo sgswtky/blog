@@ -1,7 +1,7 @@
 ---
 title: "Jenkins Pipeline でGroovyを書いてたら期待しない動きをした"
 date: 2018-07-17T20:14:21+09:00
-draft: true
+draft: false
 categories: ["Jenkins"]
 tags: ["Jenkins", "Pipeline"]
 ---
