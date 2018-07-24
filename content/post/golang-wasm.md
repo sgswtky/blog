@@ -54,6 +54,41 @@ Goでビルドしたコードがブラウザで動いて感動。
 
 wasmファイルのレスポンスヘッダの Content-Typeが `application/wasm` となっていた。
 
+以下のようなgoroutineのコードもwasmで動かしてみたらちゃんと動いた。
+
+```main.go
+package main
+
+import (
+	"fmt"
+	"time"
+	"sync"
+	"math/rand"
+)
+
+func f(s string, wg *sync.WaitGroup) {
+	for i := 0; i < 3; i++ {
+		time.Sleep(time.Second * 1)
+		fmt.Printf("%s%d: %d\n", s, i+1, rand.Int())
+	}
+	wg.Done()
+}
+
+func main() {
+	wg := new(sync.WaitGroup)
+	for i := 0; i < 3; i++ {
+		wg.Add(1)
+		go f("test", wg)
+	}
+	wg.Wait()
+}
+
+```
+
+以下は実際に動かした様子。
+Content-Typeが `wasm` となる所、`fmt.Printlf` が console.logに並列で出力されている所がわかる。
+![実際にwasmで動かした様子](/images/go-wasm-run.gif)
+
 ネイティブに近いパフォーマンスという所についてはちゃんと検証してないのであまりわからなかった。
 
 Golangは処理の速さに定評があるので、コレひとつ覚えるだけででサーバーサイドもフロントエンドも速度出せる感じのモノが作れるように今後なるのかなと思った。
