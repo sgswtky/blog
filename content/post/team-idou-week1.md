@@ -1,7 +1,9 @@
 ---
 title: "チーム期間限定異動1週間目"
 date: 2018-08-04T21:37:40+09:00
-draft: true
+draft: false
+categories: ["Scala"]
+tags: ["初心者"]
 ---
 
 チーム異動して学んだことを書いていこうと思う。
