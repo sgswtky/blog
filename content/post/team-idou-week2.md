@@ -1,6 +1,6 @@
 ---
 title: "チーム期間限定異動2週間目"
-date: 2018-08-08T22:17:08+09:00
+date: 2018-08-10T22:00:08+09:00
 draft: false
 categories: ["Scala"]
 tags: ["初心者"]
