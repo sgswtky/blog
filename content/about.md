@@ -12,7 +12,7 @@ draft: false
 
 もしマサカリ等ありましたらご連絡ください。
 
-**Profile部分を 👨[こちらに](/profile)👨移動しました**
+**Profile部分を 👨[こちらに](/profile/)👨移動しました**
 
 ## credit
 
