@@ -1,7 +1,7 @@
 ---
 title: "Auroraで SELECT INSERT するのやめた"
-date: 2020-08-14T13:41:21+09:00
-draft: true
+date: 2020-08-16T13:41:21+09:00
+draft: false
 categories: ["Aurora", "MySQL"]
 tags: ["DB", "Query", "MySQL", "Aurora"]
 ---
