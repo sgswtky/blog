@@ -8,6 +8,8 @@ params:
   author: sgswtky
   githubUsername: sgswtky
   accent: green
+  css:
+    - /css/custom.css
   showBorder: true
   logo:
     url: logo.png
