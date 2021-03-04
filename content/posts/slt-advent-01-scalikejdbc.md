@@ -9,7 +9,7 @@ tags: ["ScalikeJDBC"]
 ScalikeJDBCというScalaのライブラリを業務で使用しているのですが、
 一部不明な点があったので調べてみました。
 
-## ScalikeJDBCとは
+## ScalikeJDBC（JDBCを用いたScalaのORM）
 
 ![ScalikeJDBC_ロゴ](/images/scalikejdbc-logo.png)
 
@@ -19,7 +19,7 @@ ScalikeJDBCは、JDBCをラップしたScalaのライブラリです。
 自分もいくつかのScalaプロジェクトで、MySQLのコネクタとして採用しています。
 日本語の情報が多く、Scala触り始めの方でも扱う敷居は低いのではないかと思います。
 
-## QueryDSL
+## QueryDSL（クエリ直接記述）
 
 ScalikeJDBCのDSLはコード中にSQLを記述するように書けて、以下の2種類の書き方が可能です。
 
@@ -39,7 +39,7 @@ val groupMember = withSQL {
 }.map(_.toMap).list.apply
 ```
 
-## 一部不明な点とは
+## 挙動がわからず確認してみようと思ったきっかけ
 
 QueryDSLを使って、以下のように WHERE句に LocalDateの値を使用してSELECT句のクエリを流しました。
 
@@ -65,7 +65,7 @@ select * from user where value = 2018-12-13
 
 つまり、自動でクォートされる型・されない型があるようです。
 
-## "クォート"される型と クォート されない型
+## "クォート" が付与される型と クォート が付与されない型
 
 今回は、この時にクォートされる型とされない型について SELECT句で調べてみました。
 
@@ -135,7 +135,7 @@ The date components should be set to the "zero epoch" value of January 1, 1970 a
 
 ScalikeJDBCもしくはその先で使用しているライブラリが、`java.sql.Time` の言う日付コンポーネントにアクセスしているという事が挙動からわかりました。
 
-## まとめ
+## 最後に
 
 ScalikeJDBCを使用すると、**型によってクォートが付加されない事がある** という事がわかりました。
 

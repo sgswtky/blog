@@ -28,7 +28,7 @@ toString
 | apply | 関数の適用 |
 | toString | String型に変換 |
 
-## compose
+## compose（関数合成を行うメソッド）
 
 - レシーバの関数を後に適用
 - ２つの `Function1` から新しい `Function1` を生成
@@ -77,8 +77,9 @@ val f = ef1.compose(ef2).compose(ef3)
 3. {ef3のあとef2のあとef1が実行されるFunction1}
 ```
 
-## andThen
+## andThen（関数合成を行うメソッド）
 
+- こちらも関数合成
 - composeとは逆でレシーバを先に適用
 - ２つの `Function1` から新しい `Function1` を生成
 
@@ -112,10 +113,10 @@ ef1.andThen(ef2).andThen(ef3)
 {ef1の後ef2の後ef3を適用する関数}
 ```
 
-## apply
+## apply（コンストラクタ）
 
 - 関数を適用する時にすでに呼ばれてる
-- 普通にいつもシンタックスシュガーで呼び出してる
+- 意識せずにいつもシンタックスシュガーで呼び出してる
 
 ```example.scala
 object method extends App {
@@ -159,7 +160,7 @@ override def toString() = "<function1>"
 cop.method$$$Lambda$6/817406040@61009542
 ```
 
-# Function2
+# Function2（引数2つのメソッド）
 
 これまで `Function1` を例として見てきたけど、Function `2` では実装してるメソッドが異なる。
 
@@ -170,9 +171,9 @@ curried
 tupled
 ```
 
-## curried
+## curried（カリー化）
 
-定義した関数の引数をまとめてカリー化してくれる。
+定義した関数の引数をまとめてカリー化が行える。
 
 ```example.scala
 object method extends App {
@@ -200,9 +201,9 @@ EXAMPLE
 EXAMPLE
 ```
 
-## tupled
+## tupled（引数のタプル化）
 
-引数をタプルで受け取れるようにしてくれる。
+引数をタプルで順番に受け取れるようにしてくれる。
 
 ```example.scala
 object method extends App {
@@ -235,7 +236,7 @@ EXAMPLE
 `compile error` の部分は元の関数 `f` に対してタプルを渡している。
 これは単純に型が違うのでエラーとなる。 tupledを呼び出す事でタプルで受け付ける関数に変換できる。
 
-## まとめ
+## 触ってみたまとめ
 
 scalaは全てオブジェクトになっていて、関数ですらオブジェクトになっている。
 こういう細かい実装されてる関数に詳しくなってscalaの使いたい機能をサクサク使えるようになりたい。

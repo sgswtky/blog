@@ -8,9 +8,7 @@ tags: ["ORMapper", "sql", "library"]
 
 先日 `sqlx` を触ってみて、他のORMも触ってみたいと思って触ってみた
 
-## 色々試してみた
-
-### DB接続部分
+### DB接続の定義
 
 接続は他のORMと同じような感じ。
 
@@ -34,7 +32,7 @@ func TestXorm(t *testing.T) {
 }
 ```
 
-### 今回操作するDDLと構造体
+### 今回テストで操作するDDL＆構造体
 
 ```example.sql
 CREATE TABLE `users` (
@@ -59,7 +57,9 @@ type Users struct {
 }
 ```
 
-### GET
+これで CRUDを動かしてみる。
+
+### GET (SELECT * FROM .. LIMIT 1) を動かしてみる
 
 `SELECT * FROM users LIMIT 1`
 
@@ -70,7 +70,7 @@ has, err := engine.Get(&user)
 
 hasには値を取得できたかどうかが入る。 `user` に結果が入る
 
-### Find
+### Find (SELECT * FROM ..) を動かしてみる
 
 - 通常のFind。全て取得する
 
@@ -95,10 +95,9 @@ err = engine.Where("user_name = ?", "bbbb").Find(&user)
 // SELECT * FROM users WHERE user_name = "bbbb"
 ```
 
-### JOIN
+### JOINも検証
 
-Joinについて試してみる。
-もう一つテーブルが必要なので適当に定義
+もう一つテーブルが必要なので下記を定義して検証を進めた
 
 ```example.sql
 CREATE TABLE `friends` (
@@ -123,7 +122,7 @@ type Friends struct {
 }
 ```
 
-今回、usersテーブルとfriendsテーブルの結果が欲しいため以下のような構造体とレシーバを作成
+今回、usersテーブルとfriendsテーブルの結果が欲しいため以下のような構造体とレシーバを作成する
 
 ```users_friends.go
 type UsersFriends struct {
@@ -145,10 +144,10 @@ err = engine.Join("INNER", "friends", "friends.user_id = users.user_id").Find(&u
 
 `UsersFriends` 構造体にちゃんと結果が入ってきた。JOINの時に既存の構造体を使いまわしてるのが割とわかりやすくて良いかもしれない。
 
-### Iterate
+### Iterateで反復処理の記述も可能
 
-- 反復処理ができる
-- 全てのユーザーの名前に「さん」付する処理。Iterate以外と便利
+- 全てのユーザーの名前に「さん」付する処理。Iterate意外に便利そうな気がする
+- ただ、SQLで付けるのと切り分けが難しそう…。
 
 ```iterate.go
 users := make([]Users, 0)
@@ -161,7 +160,7 @@ err = engine.Iterate(new(Users),
   })
 ```
 
-### Rows
+### goのsql標準にもある Rows から取り出して加工する処理
 
 - rowsの処理も書ける
 
@@ -177,7 +176,7 @@ for rows.Next() {
 }
 ```
 
-### sum
+### sum 合計するクエリを発行する関数もある
 
 - sumできるカラムの存在するテーブルを作成して取得してみる
 
@@ -206,7 +205,7 @@ fmt.Println(total)
 
 - totalに結果が入る
 
-### 直接SQL発行
+### 直接SQLを記述して実行
 
 - 直接SQLを指定する事が可能
 - `...FROM sums").Find(&us...` の `Find` を `Sum` 等に変える事で違う形で結果の取得が可能
@@ -238,9 +237,9 @@ fmt.Println(affected)
 affected, err := engine.Where("user_id = ?", "test1").Delete(user)
 ```
 
-## 使ってみて思ったこと
+## 実際に使ってみて感じた事
 
-### テーブル名の指定
+### テーブル名指定の必要があり、書く量が多くなりそう
 
 直接SQLを直接書く場合を除いて、`xorm` のクエリビルダを使う場合に、構造体とテーブル名を一致させなければならないルールがある。
 
@@ -290,10 +289,12 @@ affected, err := engine.Id("test2").Cols("user_name").Update(&user)
 ```
 
 
-## まとめ
+## 実際に触ってみてまとめ
 
 慣れれば問題無いかもしれないが、 `engine.Where(...)` で、その後に `Find`, `Delete`, `Update` を指定するのが個人的に受け付けなかった。
 動詞が先だったらしっくりきてたかもしれない…。
+
+Whereだけを使い回す事ってよくあるからやりたい事わかるっちゃわかるんだけど…。
 
 Iterate処理はとても便利そうだった。
 APIとかでDBから値とってレスポンス返却する時にほんの少し加工するだけのパターンって結構あると思うので、何かしらに使えそう。

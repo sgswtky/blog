@@ -6,21 +6,21 @@ categories: ["local"]
 tags: ["iTerm2", "Terminal", "git"]
 ---
 
-## きっかけ
+## 良い感じにする機会がたまたまやってきた
 
 Macのバッテリーが膨らみすぎて、交換してもらった。
 性能面では特に問題なかったのに新品の希望通りのPCを手配して頂いてこの辺の柔軟さ・理解がある所には会社に感謝🙏
 
 がっつりイジり倒して玄人感あるターミナルっていうよりは基本機能に配色調整したシンプルなターミナルにしました。
 
-## いままで
+## これまでの構成
 
 - iTerm2
 - zsh
 - oh-my-zsh
 - デフォルトテーマ
 
-## これから
+## これからの構成（ほぼ変更無ですがいくつか追加）
 
 - iTerm2
 - iTerm2のフォント変更
@@ -34,35 +34,30 @@ Macのバッテリーが膨らみすぎて、交換してもらった。
 
 - https://www.iterm2.com/
 
-### iTerm2のフォント変更
+### iTerm2でのフォント変更
 
 - `13pt Menlo Regular` に変更して使ってます
   - InteliJIdeaが Menloなのでそちらに合わせる形で設定しました
 
-### japaneseque
+### japaneseque(iTerm2配色設定ファイル)
 
-- iTerm2の配色の設定ファイル
-  - https://github.com/aereal/dotfiles/blob/master/colors/Japanesque/Japanesque.itermcolors
-- 作者のブログ記事
-  - https://this.aereal.org/entry/2013/01/02/222304
+- https://github.com/aereal/dotfiles/blob/master/colors/Japanesque/Japanesque.itermcolors
+- https://this.aereal.org/entry/2013/01/02/222304
 
-### zsh
+### zsh(macの場合はbrewで入れる)
 
-- wikipedia
-  - https://ja.wikipedia.org/wiki/Z_Shell
-- macだとbrewで入ります。入れ方はググると出てきます。
-  - https://qiita.com/nenokido2000/items/763a4af5c161ff5ede68
+ - https://ja.wikipedia.org/wiki/Z_Shell
+ - https://qiita.com/nenokido2000/items/763a4af5c161ff5ede68
 
 ### oh-my-zsh
 
-- github（入れ方もREADMEにあります）
-  - https://github.com/robbyrussell/oh-my-zsh
+ - https://github.com/robbyrussell/oh-my-zsh
 
 ### avit
 
 - `~/.zshrc` の `ZSH_THEME` を、`ZSH_THEME="avit"` にするだけ
 
-### ターミナルの表示カスタマイズ
+### zshでターミナル表示のカスタマイズ
 
 ここまではインストール＆設定するだけでしたが、この表示カスタマイズだけ色々イジりました。
 
@@ -125,9 +120,9 @@ RPROMPT='`rprompt-git-current-branch`'
 ![ターミナル参考画像](/images/local-terminal-example.png)
 
 
-### iTerm2の設定
+### iTerm2の配色設定設定
 
-- 配色の設定とか書いてないけど若干変えてる所があるので設定をエクスポートしておきました。
+- 下記をインポートすると適用できます。
 
 [settings.json](/files/iterm2-settings.json)
 

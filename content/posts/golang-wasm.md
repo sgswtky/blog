@@ -7,7 +7,7 @@ tags: ["WebAssembly"]
 ---
 wasmとは何かを調べてみて、Goでブラウザで動かしてみました。
 
-## WebAssembly とは
+## WebAssembly とは何なのか
 
 - 略してwasm。
 - メジャー4ブラウザ（Chrome、Edge、Firefox、Safari）でサポート
@@ -21,17 +21,17 @@ wasmとは何かを調べてみて、Goでブラウザで動かしてみまし�
 - 普通にWebやってると感じないと思うけど、ブラウザ上で動作するゲーム・3Dを使ったサービスのJsコードとかは数十MBあるらしいのでサイズ問題は無視できない。
 ![wasm雰囲気イラスト](/images/go-wasm-illust.png)
 
-### 使える言語
+### WebAssemblyを使える言語
 
 - LLVMに変換できる言語なら動くらしい。（C・C++・Objective-C・Rust・Go?）
 - kripken/emscripten というツールで LLVM to wasmが可能
 
-### 将来的に
+将来的には、
 
 - Jsからwasmに置き換わる事はない
 - Javascriptを補完するだけ
 
-## Goで触るには
+## WebAssembly を Golangで触るには
 
 wasmは `go1.11` 系のバージョンから使用可能。
 
@@ -48,7 +48,7 @@ cmd/go: unsupported GOOS/GOARCH pair js/wasm
 
 実際に触ってみるにあたり、golangのwasmをブラウザ上で実際に動かせるこちらのチュートリアルをやってみた https://blog.gopheracademy.com/advent-2017/go-wasm/
 
-## 触ってみて
+## 実際に試しに動かしてみた
 
 Goでビルドしたコードがブラウザで動いて感動。
 
@@ -93,7 +93,7 @@ Content-Typeが `wasm` となる所、`fmt.Printlf` が console.logに並列で�
 
 Golangは処理の速さに定評があるので、コレひとつ覚えるだけででサーバーサイドもフロントエンドも速度出せる感じのモノが作れるように今後なるのかなと思った。
 
-## 実際に使えるのか
+## Golang での WebAssemblyは実際今後で使えるものなのか
 
 メリット・デメリットを見る感じ、今の所活かせそうな分野でいくとゲーム・3D描画・重い処理する系の所くらい…？という所感でした。
 

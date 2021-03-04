@@ -14,7 +14,10 @@ TreasureDataが開発するオープンソースのジョブスケジューラ
 
 個人的に、Jenkinsと比較してコード管理・ログの扱いを厳重に管理できる好印象なプロダクト
 
-## 今回の内容
+---
+
+このdigdagで、別ワークフローを複数回起動させるという事が業務で必要となり、検証を行いました。
+
 通常、 `require` オペレータを使用すると `session_time` の関係で別のワークフローを複数回起動する事はできないけど、 `session_time` を動的に変更して無理矢理複数回起動させる。
 
 `call` を使えば同じ事ができるけど、 `ignore_failure` を使いたかったので、 `require` で動くようにしてみた。
@@ -23,7 +26,7 @@ TreasureDataが開発するオープンソースのジョブスケジューラ
 
 （`session_time` と `require` であえてできないようにしてる事を無理矢理やってる感じがあるので、もし本番に適用する場合は自己責任で…）
 
-### requireを普通に使ったパターン
+### requireを単純に使用するパターン
 
 `parent.diglk`
 
@@ -76,7 +79,7 @@ WebUIで見るとこうなる。
 
 ![digdagのWebUI](/images/digdag-require-reuse-normal-require.png)
 
-### [今回の内容] requireを無理矢理複数回呼び出してみる
+### requireを理複数回起動させる
 
 内容は比較的単純で、呼び出す `require` 全てに違う `session_time` を指定している。
 

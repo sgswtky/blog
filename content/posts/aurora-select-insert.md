@@ -6,13 +6,13 @@ categories: ["Aurora", "MySQL"]
 tags: ["DB", "Query", "MySQL", "Aurora"]
 ---
 
-## 概要
+## ずっとSELECT INSERTが便利で使ってた
 
 `SELECT INSERT`（構文的に正しくは `INSERT SELECT` だけど勝手に `SELECT INSERT`と呼んでる…？）を使うのをやめて、代わりに Auroraに搭載されている機能を使った話。
 
 所属会社の担当プロダクトの本番環境でこのAuroraを使ってるのですが、運用してデータが蓄積されていくにつれていくつか問題点が出てきました。
 
-## Amazon Aurora
+## Amazon Aurora MySQL
 
 https://aws.amazon.com/jp/rds/aurora/
 
@@ -20,11 +20,11 @@ RDBで、要は MySQL を AWS に最適化して機能を増やしたSaaS。
 
 クエリとかは MySQLで使えるクエリが使える（厳密に使えないのいくつかあるかも）
 
-## SELECT INSERT で長時間ロックが掛かる
+## SELECT INSERT で長時間ロックが掛かってしまう
 
 ---
 
-### 前提1
+### インフラ・負荷周りの前提情報
 
 - バージョン: AWS Aurora mysql 5.6(の現時点での最新)
 - クラスタ: writer 1台、reader 1台（オートスケール）
@@ -59,7 +59,7 @@ report(元テーブル) → SELECT INSERT → public_report(コピーテーブ�
 調べてみると、SELECT INSERT するとロックがかかる事が公式マニュアルに乗っていました。
 https://dev.mysql.com/doc/refman/5.6/ja/insert-select.html
 
-### 前提2
+### ソフトウェア的な挙動の前提
 
 上記の通り、SELECT INSERT するとロックがかかり書き込みができなくなります。
 ですが、僕が担当するプロダクトでは ETL処理による出力の書き込みが *report(元テーブル)に対して* 30分に1回行われます。
@@ -70,7 +70,7 @@ https://dev.mysql.com/doc/refman/5.6/ja/insert-select.html
 - 5000秒以上掛かるクエリはプロダクトとして許容できない
 - ETL処理も大幅に遅延してしまうため挙動を変えず（現在の仕様のまま）に競合しないやり方に変える必要が出てきた
 
-### 解決方法
+### これの課題に対する単純な解決方法
 
 ---
 
@@ -91,7 +91,7 @@ https://dev.mysql.com/doc/refman/5.6/ja/insert-select.html
 
 `INTO OUTFILE` と `LOAD DATA` はそれぞれ MySQLにも実装されているクエリです。が、**S3** 出力に対応してるのは Auroraだけであり、Aurora独自の実装です。
 
-#### `SELECT INTO` 構文
+- `SELECT INTO` 構文
   - https://dev.mysql.com/doc/refman/5.6/ja/select-into.html
 
 こんな感じで、SELECTした結果を直接S3に出力できる。
@@ -105,7 +105,7 @@ INTO OUTFILE S3 's3://#BUCKET/tmp/#HASH'
 FIELDS TERMINATED BY ',';
 ```
 
-#### `LOAD DATA` 構文
+- `LOAD DATA` 構文
   - https://dev.mysql.com/doc/refman/5.6/ja/load-data.html
 
 FROM S3 で S3に存在するファイルをテーブルに読み込む事ができる。
@@ -117,7 +117,7 @@ FIELDS TERMINATED BY ','
 (/* テーブルのカラム全て指定 */)
 ```
 
-### 結果
+### 実施前後でのマトリクス
 
 ---
 
@@ -136,7 +136,7 @@ FIELDS TERMINATED BY ','
 
 僕の担当プロダクト的には合わなかったという話なのでケースバイケース。
 
-## 感想
+## このチューニングを行ってみての感想
 
 僕の担当プロダクトでは、ETL処理からの書き込みがあるため、下記を徹底すべきなのかなと感じた。
 - 書き込み処理は writerエンドポイント
