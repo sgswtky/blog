@@ -6,15 +6,11 @@ draft: false
 
 ## Profile
 
-Name: sgswtky
-
-Position: backend engineer
-
-Birth(yyyy/MM): 1991/02
-
-WorkPlace: Shibuya / 2020.07~ WFH
-
-Comment: 本を読了した的なスキルは載せてません。全て実務経験があるスキルのみ載せてます。
+- Name: sgswtky
+- Position: backend engineer
+- Birth(yyyy/MM): 1991/02
+- WorkPlace: Shibuya / 2020.07~ WFH
+- Comment: 本を読了した的なスキルは載せてません。全て実務経験があるスキルのみ載せてます。
 
 ## Skills Highlight
 

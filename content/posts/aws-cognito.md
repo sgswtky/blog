@@ -68,13 +68,11 @@ reCAPTCHAはトークン作成時にドメインを指定するため、指定�
 
 ※ 環境変数 `RECAPTCHA_SECRET` に reCAPTCHAのシークレットキーが必要なので Lambdaに設定しておいてください。
 
-| トリガー | url |
-| --- | --- |
-| サインアップ前 |  https://gist.github.com/sgswtky/c0f83c91ccb66901cb52dfc6b202fb9f |
-| 認証前 | https://gist.github.com/sgswtky/5c877df2553f56d7d668bdea844d0a57 |
-| 認証チャレンジの定義 | https://gist.github.com/sgswtky/d3bfee839856767b56f0b61151dedf5a |
-| 認証チャレンジレスポンスの確認 | https://gist.github.com/sgswtky/62e6ad7f66da8d89bc4738361949e8ca |
-| 認証チャレンジの作成 | https://gist.github.com/sgswtky/4e55a27b26959f88f17c4ce06730dc9a |
+- [サインアップ前](https://gist.github.com/sgswtky/c0f83c91ccb66901cb52dfc6b202fb9f)
+- [認証前](https://gist.github.com/sgswtky/5c877df2553f56d7d668bdea844d0a57)
+- [認証チャレンジの定義](https://gist.github.com/sgswtky/d3bfee839856767b56f0b61151dedf5a)
+- [認証チャレンジレスポンスの確認](https://gist.github.com/sgswtky/62e6ad7f66da8d89bc4738361949e8ca)
+- [認証チャレンジの作成](https://gist.github.com/sgswtky/4e55a27b26959f88f17c4ce06730dc9a)
 
 次に、登録した Lambdaファンクションを使用するユーザープールのトリガーからそれぞれ選んでいく。（上記テーブルのトリガー名を参考に設定）
 
