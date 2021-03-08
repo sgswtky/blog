@@ -12,12 +12,10 @@ draft: false
 
 もしマサカリ等ありましたらご連絡ください。
 
-**Profile部分を 👨[こちらに](/profile/)👨移動しました**
-
 ## credit
 
 Minecraft content and materials are trademarks and copyrights of Mojang and its licensors. All rights reserved.
 
 ## contact
 
-to Twitter.
+to [Twitter](https://twitter.com/sgswtky).
