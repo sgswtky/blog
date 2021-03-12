@@ -29,18 +29,21 @@ params:
   - swift
 menu:
   main:
+    - name: Top
+      url: /
+      weight: 1
     - name: Blog
       url: /post/
-      weight: 1
-    - name: About
-      url: /about/
       weight: 2
     - name: Profile
       url: /profile/
       weight: 3
+    - name: Blog
+      url: /post/
+      weight: 4
     - name: GitHub
       url: https://github.com/sgswtky
-      weight: 4
+      weight: 5
     - name: Twitter
       url: https://twitter.com/sgswtky
-      weight: 5
+      weight: 4
