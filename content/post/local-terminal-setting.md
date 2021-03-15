@@ -4,6 +4,7 @@ date: 2018-07-09T17:08:18+09:00
 draft: false
 categories: ["local"]
 tags: ["iTerm2", "Terminal", "git"]
+description: Macのターミナル周りを整えた時の記録。iTerm や oh-my-zshを使って色味等を整えた。gitの現在のステータスなどをひと目でわかるように設定し（add済みなのかcommit済みなのか等）自分なりに開発しやすくしました。
 ---
 
 ## 良い感じにする機会がたまたまやってきた

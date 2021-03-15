@@ -4,6 +4,7 @@ date: 2018-07-15T23:17:35+09:00
 draft: false
 categories: ["Go"]
 tags: ["ORMapper", "sql", "library"]
+description: go-xorm/xorm という ORMを触った時の記事。簡単なCRUD処理、JOIN、または直接SQLを実行して試してみました。
 ---
 
 先日 `sqlx` を触ってみて、他のORMも触ってみたいと思って触ってみた

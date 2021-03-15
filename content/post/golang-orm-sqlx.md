@@ -4,6 +4,7 @@ date: 2018-07-10T13:53:07+09:00
 draft: false
 categories: ["Go"]
 tags: ["ORMapper", "sql", "library"]
+description: jmoiron/sqlx という GolangのORMを試しに使ってみました。簡単に CRUDで試したりトランザクション処理を試してみたり、NamedExecという機能も使ってみました。感想としては、極々薄い感じのORMで個人的に好みのORMでした。
 ---
 
 ## このORM触ってみようと思ったきっかけ
