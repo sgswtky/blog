@@ -4,6 +4,7 @@ date: 2020-08-16T13:41:21+09:00
 draft: false
 categories: ["Aurora", "MySQL"]
 tags: ["DB", "Query", "MySQL", "Aurora"]
+description: AWS Auroraで便利だと思って使ってた SELECT INSERT を辞めた話。重いクエリでSELECT INSERTを使い長時間ロックが掛かってしまい結果数千秒のクエリが頻発していた。けど、割と単純な方法で解決した話。
 ---
 
 ## ずっとSELECT INSERTが便利で使ってた

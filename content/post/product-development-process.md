@@ -4,6 +4,7 @@ date: 2018-07-28T15:44:16+09:00
 draft: false
 categories: ["development"]
 tags: ["environment"]
+description: 前チームでの開発プロセスのやり方・流れ。自分用メモ
 ---
 
 来週から期間限定で違うチームに異動するため、今のチームの開発プロセスをなるべく詳細に書き残しておこうと思う。

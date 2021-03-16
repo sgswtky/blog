@@ -4,6 +4,7 @@ date: 2018-12-13T21:30:21+09:00
 draft: false
 categories: ["Scala"]
 tags: ["ScalikeJDBC"]
+description: 所属チームのプロダクトで使用している ScalikeJDBCのクォーテーションが付く付かないの挙動が気になったので調べてみた。
 ---
 
 ScalikeJDBCというScalaのライブラリを業務で使用しているのですが、

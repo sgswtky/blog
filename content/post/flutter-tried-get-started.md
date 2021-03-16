@@ -4,6 +4,7 @@ date: 2020-04-09T17:01:38+09:00
 draft: false
 categories: ["Flutter"]
 tags: ["Flutter"]
+description: flutterに入門してみた話。BLoCパターンなど独自の文化？書き方があってとても良かった。Flutter Webが正式リリースされたらもう一度触りたい。
 ---
 
 ## Flutterって何

@@ -4,7 +4,7 @@ date: 2021-02-21T10:00:00+09:00
 draft: false
 categories: ["AWS", "Cognito"]
 tags: ["AWS", "Cognito", "ユーザー管理"]
-description: awsのサービス Cognito というユーザー管理のためのプロダクトを Lambda(Golang) + PureJS + reCAPTCHA v3 で動かした見た時の記事です。Cognitoは無料枠も大きく非常に有用なプロダクトで、柔軟性の効く作りになっており非常に良いプロダクトでした。
+description: awsのサービス Cognito というユーザー管理のためのプロダクトを Lambda(Golang) + PureJS + reCAPTCHA v3 で動かした時の記事です。Cognitoは無料枠も大きく非常に有用なプロダクトで、柔軟性の効く作りになっており非常に良いプロダクトでした。
 ---
 
 Cognito は AWS で提供されてるユーザー管理のための機能群のようなもの。

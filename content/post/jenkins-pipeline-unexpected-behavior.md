@@ -4,6 +4,7 @@ date: 2018-07-17T20:14:21+09:00
 draft: false
 categories: ["Jenkins"]
 tags: ["Jenkins", "Pipeline"]
+description: Jenkinsを使ってた時の話。バージョンアップはとても大切。
 ---
 
 先日から古い `Jenkins2` のジョブをメンテする仕事をしていて、Pipelineで Groovyを書いてたら特定のパターンでは動くけどそれ以外だと動かないという事情に遭遇した。

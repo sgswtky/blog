@@ -4,6 +4,7 @@ date: 2018-07-22T19:38:54+09:00
 draft: false
 categories: ["Go"]
 tags: ["WebAssembly"]
+description: Golangでwasmをどんなもんなのか動かしてみた。
 ---
 wasmとは何かを調べてみて、Goでブラウザで動かしてみました。
 

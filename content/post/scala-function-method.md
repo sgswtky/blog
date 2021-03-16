@@ -4,6 +4,7 @@ date: 2018-10-23T09:30:08+09:00
 draft: false
 categories: ["Scala"]
 tags: ["Function"]
+description: Scalaの理解を深めるため Function がデフォルトでどんなメソッドが使えるのか調べてみた。
 ---
 
 しばらく放置してた。反省。

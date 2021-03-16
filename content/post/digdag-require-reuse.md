@@ -4,6 +4,7 @@ date: 2019-07-26T14:38:49+09:00
 draft: false
 categories: ["Digdag"]
 tags: ["Workflow"]
+description: Digdagというワークフローエンジンで別ワークフローを複数回起動させた話。
 ---
 
 ## digdag
