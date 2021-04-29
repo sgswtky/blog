@@ -114,6 +114,8 @@ class SecondHandBuyer {
 
 ---
 
+{{< post-ads >}}
+
 ## パラメータ多相（パラメトリック多相）
 
 - 同意語

@@ -80,6 +80,8 @@ WebUIで見るとこうなる。
 
 ![digdagのWebUI](/images/digdag-require-reuse-normal-require.png)
 
+{{< post-ads >}}
+
 ### requireを理複数回起動させる
 
 内容は比較的単純で、呼び出す `require` 全てに違う `session_time` を指定している。

@@ -238,6 +238,8 @@ fmt.Println(affected)
 affected, err := engine.Where("user_id = ?", "test1").Delete(user)
 ```
 
+{{< post-ads >}}
+
 ## 実際に使ってみて感じた事
 
 ### テーブル名指定の必要があり、書く量が多くなりそう

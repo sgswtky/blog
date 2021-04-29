@@ -63,6 +63,8 @@ Running on master in /var/lib/jenkins/workspace/Pipeline_A
 Finished: SUCCESS
 ```
 
+{{< post-ads >}}
+
 ### 理由はわからないが何故か動くコード
 
 以下のコードは期待する動きをした。

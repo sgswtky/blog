@@ -49,6 +49,8 @@ cmd/go: unsupported GOOS/GOARCH pair js/wasm
 
 実際に触ってみるにあたり、golangのwasmをブラウザ上で実際に動かせるこちらのチュートリアルをやってみた https://blog.gopheracademy.com/advent-2017/go-wasm/
 
+{{< post-ads >}}
+
 ## 実際に試しに動かしてみた
 
 Goでビルドしたコードがブラウザで動いて感動。

@@ -95,6 +95,8 @@ r, err := db.Query("update users set user_name = 'update' where user_id = ?", 1)
 
 戻り値には Rowsとerorrが入る
 
+{{< post-ads >}}
+
 ### NamedExecメソッドについて
 
 実際に触っていると `NamedExec` というメソッドを見つけた。
