@@ -4,6 +4,7 @@ languageCode: ja-jp
 publishDir: public
 title: 壁は登るためにある
 theme: minimal
+googleAnalytics: G-0TV1S0EXHL
 params:
   author: sgswtky
   githubUsername: sgswtky
