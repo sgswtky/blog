@@ -3,7 +3,7 @@ title: "Goでポインターの扱いがわからない時に見たい内容"
 date: 2021-05-05T18:15:00+09:00
 draft: false
 categories: ["Go"]
-tags: ["Golang", "pointer", "gomock"]
+tags: ["Golang", "pointer", "gomock", "Go言語", "ポインタ"]
 description: Goのポインタ型を扱う時に自分が考えている内容をまとめた記事。ポインタの扱い方はわかったけど具体的にどうしていくのが良いのかをまとめた。
 ---
 
